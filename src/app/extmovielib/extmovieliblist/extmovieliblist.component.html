@@ -1,0 +1,32 @@
+<div>
+  <table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>released</th>
+      <th>Poster</th>
+      <th>Vote Average</th>
+      <th>Add to collection</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let extMovie of movies.results">
+      <td>{{extMovie.id}}</td>
+      <td>{{extMovie.title}}</td>
+      <td>{{extMovie.release_date}}</td>
+      <td><img alt="nothing"
+               src="http://image.tmdb.org/t/p/w500/{{extMovie.poster_path}}"
+               height="42" width="42"></td>
+      <td>{{extMovie.vote_average}}</td>
+      <td><button type="submit" (click)="addMovie(extMovie)" class="btn btn-success" >Add To collection</button></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <button *ngIf="movies.page > 1" type="button" class="btn btn-info btn-xs" (click)="browse(movies.page-1)">← Previous</button>
+  <button *ngIf="movies.page <= 1" class="previous btn btn-info btn-xs disabled">← Previous</button>
+  <button *ngIf="movies.page < movies.total_pages" type="button" (click)="browse(movies.page+1)" class="next btn btn-xs btn-info" style="float: right;">Next →</button>
+  <button *ngIf="movies.page >= movies.total_pages" class="next btn btn-info btn-xs disabled" style="float: right;">Next →</button>
+</div>
+
