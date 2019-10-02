@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let extMovie of movies.results">
-      <td>{{extMovie.id}}</td>
+      <td><button type="button" class="btn btn-group-sm" (click)="openDetails(extMovie.id)">{{extMovie.id}}</button></td>
       <td>{{extMovie.title}}</td>
       <td>{{extMovie.release_date}}</td>
       <td><img alt="nothing"
@@ -29,4 +29,3 @@
   <button *ngIf="movies.page < movies.total_pages" type="button" (click)="browse(movies.page+1)" class="next btn btn-xs btn-info" style="float: right;">Next →</button>
   <button *ngIf="movies.page >= movies.total_pages" class="next btn btn-info btn-xs disabled" style="float: right;">Next →</button>
 </div>
-
