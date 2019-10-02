@@ -5,8 +5,12 @@
     </div>
   </div>
   <div class="row form-group">
-    <div class="col-lg-12">
+    <div class="col-lg-7">
       <app-extmovieliblist *ngIf="selectedMovies != null" [movies]="selectedMovies"></app-extmovieliblist>
+    </div>
+    <div class="col-lg-5">
+      <app-extmovielibdetail></app-extmovielibdetail>
     </div>
   </div>
 </div>
+
