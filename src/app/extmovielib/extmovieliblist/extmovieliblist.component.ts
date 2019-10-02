@@ -31,4 +31,8 @@ export class ExtmovieliblistComponent implements OnInit {
 
     this.myMovieLibService.addMovie(movie).subscribe( )
   }
+
+  openDetails(movieId: number){
+    this.extMovieLibService.showDetails.emit(movieId);
+  }
 }
